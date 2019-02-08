@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Multi Step Form using semantic-ui</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+</head>
+
+<body style="background-color: #300032;">
+
+
+    <div class="ui centered grid container">
+
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="row"></div>
+
+
+        <div class="ui text container">
+            <div class="three ui buttons center aligned grid container" style="margin:20px;">
+                <div class="ui big basic violet button" id="accountS">
+                    <div class="content" style="font-size:12px;color:white;">COURSE DETAILS</div>
+                </div>
+                <button class="ui big disabled blue basic button" id="socialP">
+                    <div class="content" style="font-size:12px;color:white;">RESOURSE ALLOTMENT</div>
+                </button>
+                <button class="disabled ui big orange basic button" id="details">
+                    <div class="content" style="font-size:12px;color:white;">INSTRUCTOR DETAILS</div>
+                </button>
+            </div>
+
+            <div class="row"></div>
+            <div class="row"></div>
+            
+            <div id="account">
+                <div class="ui center aligned segment container " id="signUpBox" style="background-color: #F1F0FF;border-radius:5px;">
+                    <div class="ui centered header">
+                        <h1 class="font" style="color:#300032;">Course Details</h1>
+                    </div>
+                    <form class="ui form">
+                        <div class="form-group">
+                            <label>Course Title</label>
+                            <input type="text" class="form-control" placeholder="Course Title" name="" id=""/>
+                        </div>
+                        <div class="form-group">
+                            <label>Course Nature</label>
+                            <select class="form-control" name="" id="">
+                                <option value="0">Select</option>
+                                <option value="1">Daily</option>
+                                <option value="2">Weekend</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Course Starting Date</label>
+                            <input type="date" class="form-control" placeholder="" name="" id=""/>
+                        </div>
+                        <div class="form-group">
+                            <label>Course Ending Date</label>
+                            <input type="date" class="form-control" placeholder="" name="" id=""/>
+                        </div>
+                        <div class="form-group">
+                            <label>Total Number of hours to complete the course</label>
+                            <input type="text" class="form-control" placeholder="Required no.of hours to complete the course" name="" id=""/>
+                        </div>
+                        <div class="form-group">
+                            <label>Total Number of Theory Sessions</label>
+                            <input type="text" class="form-control" placeholder="Required no.of Theory Sessions" name="" id=""/>
+                        </div>
+                        <div class="form-group">
+                            <label>Total Number of Practical Sessions</label>
+                            <input type="text" class="form-control" placeholder="Required no.of Practical Sessions" name="" id=""/>
+                        </div>
+                        <div class="form-group">
+                            <label>Number of Subjects</label>
+                            <input type="text" class="form-control" placeholder="Required no.of Subjects" name="" id=""/>
+                        </div>
+                        <div class="form-group">
+                            <label>Subject/topic Names </label>
+                            <input type="text" class="form-control" placeholder="Required Subject/topic Names" name="" id=""/>
+                        </div>
+                        <div class="form-group">
+                            <label>Number of Instructors required</label>
+                            <input type="text" class="form-control" placeholder="Required no.of Instructors" name="" id=""/>
+                        </div>
+                        <div class="one ui buttons">
+                            <button class="ui inverted violet medium button next1 ">Next</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="social">
+                <div class="ui center aligned  segment container " id="signUpBox" style="background-color: #F1F0FF;border-radius:5px;">
+                    <div class="ui centered header">
+                        <h1 class="font" style="color:rgb(50,153,153);">Resource Allotment</h1>
+                    </div>
+                    <form class="ui form">
+                        <div class="form-group">
+                            <label>Total Number of hours allotted for the entire course</label>
+                            <input type="text" class="form-control" placeholder="No.of hours allotted for the entire course" name="" id=""/>
+                        </div>
+                        <div class="form-group">
+                            <label>Number of Theory Sessions</label>
+                            <input type="text" class="form-control" placeholder="Required no.of Practical Sessions" name="" id=""/>
+                        </div>
+                        <div class="form-group">
+                            <label>Number of Practical Sessions</label>
+                            <input type="text" class="form-control" placeholder="Required no.of Subjects" name="" id=""/>
+                        </div>
+                        <div class="form-group">
+                            <label>Number of Instructors allotted</label>
+                            <input type="text" class="form-control" value="2" name="" id="" readonly/>
+                        </div>
+
+                        <div class="two ui buttons">
+                            <button class="ui inverted violet  medium button prev1">Previous</button>
+                            <button class="ui inverted violet medium button next2">Next</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+            <div id="personal">
+                <div class="ui center aligned  segment container " id="signUpBox" style="background-color: #F1F0FF;border-radius:5px;">
+                    <div class="ui centered header">
+                        <h1 class="font" style="color:orange;">Personal Details</h1>
+                    </div>
+
+                    <form class="ui form">
+                        <div class="form-group">
+                            <label>Names of the Instructors</label>
+                            <input type="text" class="form-control" placeholder="Required no.of Practical Sessions" name="" id=""/>
+                        </div>
+                        <div class="form-group">
+                            <label>Communication Details of the Instructors</label>
+                            <textarea type="text" class="form-control" placeholder="Enter here.." name="" id=""></textarea>
+                        </div>
+                        
+                        <div class="two ui buttons">
+                            <button class="ui inverted violet  medium button prev2">Previous</button>
+                            <button class="ui inverted violet  medium button submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+    
+</body>
+
+</html>
