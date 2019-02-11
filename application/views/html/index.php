@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>PSAAKET</title>
 	
+	
     <link rel="shortcut icon" href="<?php echo base_url();?>assets/img/favicon.png" type="image/png">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/style.css">
 	<link href="<?php echo base_url(); ?>assets/vendor/css/custom.css" rel="stylesheet" type="text/css" />
@@ -30,13 +31,15 @@
                     <div class="content" style="font-size:12px;color:white;">COURSE DETAILS</div>
                 </div>
                 <button class="ui big disabled blue basic button" id="socialP">
-                    <div class="content" style="font-size:12px;color:white;">RESOURSE ALLOTMENT</div>
+                    <div class="content" style="font-size:12px;color:white;">RESOURCE  ALLOTMENT</div>
                 </button>
                 <button class="disabled ui big orange basic button" id="details">
                     <div class="content" style="font-size:12px;color:white;">INSTRUCTOR DETAILS</div>
                 </button>
+				
             </div>
-
+                  <a href="<?php echo base_url('user/lists'); ?>" class="btn btn-info">List</a>
+				  
             <div class="row"></div>
             <div class="row"></div>
             
@@ -60,23 +63,26 @@
                         </div>
                         <div class="form-group">
                             <label>Course Starting Date</label>
-                            <input type="date" class="form-control" placeholder="" name="c_strat_date" id="c_strat_date"/>
+							
+                            <input type="date"  class="form-control" placeholder="Course Starting Date" name="c_strat_date" id="c_strat_date"/>
                         </div>
+						
                         <div class="form-group">
                             <label>Course Ending Date</label>
-                            <input type="date" class="form-control" placeholder="" name="c_end_date" id="c_end_date"/>
+                            <input type="date" class="form-control" placeholder="Course Ending Date" name="c_end_date" id="c_end_date"/>
                         </div>
+						
                         <div class="form-group">
-                            <label>Total Number of hours to complete the course</label>
-                            <input type="text" class="form-control" placeholder="Required no.of hours to complete the course" name="t_num_hours" id="t_num_hours"/>
+                            <label for="t_num_hours">Total Number of hours to complete the course</label>
+                            <input type="text" class="form-control" placeholder="Total no.of hours to complete the course" name="t_num_hours" id="t_num_hours"/>
                         </div>
                         <div class="form-group">
                             <label>Total Number of Theory Sessions</label>
-                            <input type="text" class="form-control" placeholder="Required no.of Theory Sessions" name="t_num_sessions" id="t_num_sessions"/>
+                            <input type="text" class="form-control" onkeyup="sum();" placeholder="Total no.of Theory Sessions" name="t_num_sessions" id="t_num_sessions"/>
                         </div>
                         <div class="form-group">
                             <label>Total Number of Practical Sessions</label>
-                            <input type="text" class="form-control" placeholder="Required no.of Practical Sessions" name="t_num_pra_session" id="t_num_pra_session"/>
+                            <input type="text" class="form-control" onkeyup="sum();" placeholder="Total no.of Practical Sessions" name="t_num_pra_session" id="t_num_pra_session"/>
                         </div>
                         <div class="form-group">
                             <label>Number of Subjects</label>
@@ -88,8 +94,9 @@
                         </div>
                         <div class="form-group">
                             <label>Number of Instructors required</label>
-                            <input type="text" class="form-control" placeholder="Required no.of Instructors" name="num_ins_required" id="num_ins_required"/>
+                            <input type="text" class="form-control" onkeyup="sum();" placeholder="Required no.of Instructors" onkeyup="multi();" name="num_ins_required"  id="num_ins_required"/>
                         </div>
+						
                         <div class="one ui buttons">
                             <a class="ui inverted violet medium button next1">Next</a>
                         </div>
@@ -103,22 +110,18 @@
                     </div>
 
                         <div class="form-group">
-                            <label>Total Number of hours allotted for the entire course</label>
-                            <input type="text" class="form-control" placeholder="No.of hours allotted for the entire course" name="resource_course" id="resource_course"/>
+                            <label for="resource_course">Total Number of hours allotted for the entire course</label>
+                            <input type="text" class="form-control"   placeholder="No.of hours allotted for the entire course" name="resource_course" id="resource_course" readonly  />
                         </div>
                         <div class="form-group">
                             <label>Number of Theory Sessions</label>
-                            <input type="text" class="form-control" placeholder="Required no.of Practical Sessions" name="resource_theory_session" id="resource_theory_session"/>
+                            <input type="text" class="form-control"  placeholder="Required no.of Theory Sessions" name="resource_theory_session" id="resource_theory_session" readonly />
                         </div>
                         <div class="form-group">
                             <label>Number of Practical Sessions</label>
-                            <input type="text" class="form-control" placeholder="Required no.of Subjects" name="resource_practical_session" id="resource_practical_session"/>
+                            <input type="text" class="form-control" placeholder="Required no.of Practical Sessions" name="resource_practical_session" id="resource_practical_session" readonly />
                         </div>
-                        <div class="form-group">
-                            <label>Number of Instructors allotted</label>
-                            <input type="text" class="form-control" value="2" name="num_instruction_allotted" id="num_instruction_allotted" readonly/>
-                        </div>
-
+                        
                         <div class="two ui buttons">
                             <button class="ui inverted violet  medium button prev1">Previous</button>
                             <a class="ui inverted violet medium button next2">Next</a>
@@ -131,13 +134,15 @@
             <div id="personal">
                 <div class="ui center aligned  segment container " id="signUpBox" style="background-color: #F1F0FF;border-radius:5px;">
                     <div class="ui centered header">
-                        <h1 class="font" style="color:orange;">Personal Details</h1>
+                        <h1 class="font" style="color:orange;">Instructor Details</h1>
                     </div>
 
 
-                        <div class="form-group">
+                        
+						
+						 <div class="form-group">
                             <label>Names of the Instructors</label>
-                            <input type="text" class="form-control" placeholder="Required no.of Practical Sessions" name="name_instructions" id="name_instructions"/>
+                            <input type="text" class="form-control" placeholder="Names of the Instructors" name="name_instructions" id="name_instructions"/>
                         </div>
                         <div class="form-group">
                             <label>Communication Details of the Instructors</label>
@@ -171,8 +176,42 @@
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/vendor/js/bootstrapValidator.min.js"></script>
     <!-- MDB core JavaScript -->
     <script src="<?php echo base_url();?>assets/js/index.js"></script>
-    
-	 
+    <script>
+
+$(document).ready(function () {
+    $('#t_num_hours').on('change', function (e) {
+       $('#resource_course').val($('#t_num_hours').val());
+    });
+});
+
+</script>
+
+ <script>
+
+function sum() {
+            var txtFirstNumberValue = document.getElementById('t_num_sessions').value;
+            var txtSecondNumberValue = document.getElementById('num_ins_required').value;
+            var txtthirdNumberValue = document.getElementById('t_num_pra_session').value;
+			
+            var result = parseInt(txtFirstNumberValue) / parseInt(txtSecondNumberValue);
+            var res = parseInt(txtthirdNumberValue) / parseInt(txtSecondNumberValue);
+			
+            if (!isNaN(result)) {
+                document.getElementById('resource_theory_session').value = result;
+            }
+			
+			if (!isNaN(res)) {
+                document.getElementById('resource_practical_session').value = res;
+            }
+			
+			
+        }
+
+</script>
+
+
+
+
 	<script>
 $(document).ready(function() {
  

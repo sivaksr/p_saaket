@@ -18,8 +18,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12" style="background-color: #F1F0FF;border-radius: 5px;margin: 50px 0px;padding: 20px;">
-                <a href="<?php echo base_url('user'); ?>" class="btn btn-primary">Back</a>
-			   <h1 class="font" style="color:#300032;text-align: center;">Students Details</h1>
+                <a href="<?php echo base_url(''); ?>" class="btn  btn-primary">Back</a>
+			   <h1 class="font" style="color:#300032;text-align: center;">Course Details</h1>
 				
                 <table id="example" class="table table-striped table-bordered" style="width:100%;">
                     <thead>
@@ -44,10 +44,17 @@
                             <td><?php echo isset($list['c_strat_date'])?$list['c_strat_date']:''?></td>
                             <td><?php echo isset($list['c_end_date'])?$list['c_end_date']:''?></td>
                             <td><?php echo isset($list['t_num_hours'])?$list['t_num_hours']:''?></td>
-                            <td><?php echo isset($list['resource_theory_session'])?$list['resource_theory_session']:''?></td>
-                            <td><?php echo isset($list['resource_practical_session'])?$list['resource_practical_session']:''?></td>
-                            <td><?php echo isset($list['name_instructions'])?$list['name_instructions']:''?></td>
-                            <td>
+                            <td><?php echo isset($list['t_num_sessions'])?$list['t_num_sessions']:''?></td>
+                            <td><?php echo isset($list['t_num_pra_session'])?$list['t_num_pra_session']:''?></td>
+                            <th>
+							<?php echo isset($list['name_instructions'])?$list['name_instructions']:''?>
+							<li>Total Number of hours=<?php echo isset($list['t_num_hours'])?$list['t_num_hours']:''?></li>
+							<li>Number of Theory Sessions=<?php echo isset($list['resource_theory_session'])?$list['resource_theory_session']:''?></li>
+							<li>Number of Practical Sessions=<?php echo isset($list['resource_practical_session'])?$list['resource_practical_session']:''?></li>
+							</th>
+                            
+							
+							<td>
 							 <a target="_blank" href="<?php echo base_url('User/prints/'.base64_encode($list['c_d_id'])); ?>"  data-toggle="tooltip" title="Print"  class="btn btn-info">Print</a>
 	
 							</td>

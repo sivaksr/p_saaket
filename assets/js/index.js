@@ -15,7 +15,7 @@ $(document).ready(function() {
 	if(error == 0){
 		$('#account').animate('slow', function() {
 
-		  if (ct > 0) {
+		  if (error > 0) {
 			$('#account').removeClass('transition visible');
 			$('#account').addClass('transition hidden');
 
@@ -61,6 +61,8 @@ $(document).ready(function() {
 			$(this).parent().append('<div class="text-danger">This field is required</div>');
 			err++;
 		}
+			
+		
 	});
 	if(err == 0){
 		$('#socialP').addClass('disabled');
