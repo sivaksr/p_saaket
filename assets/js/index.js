@@ -1,7 +1,5 @@
 $(document).ready(function() {
 
-  var ct = 0;
-
   $('.next1').on('click', function(e) {
     e.preventDefault();
 	var error = 0;
